@@ -21,7 +21,7 @@ public class RestConsumerRoute extends RouteBuilder {
                 .apiProperty("api.title", "Drug Store API").apiProperty("api.version", "1.0.0")
                 .apiProperty("cors", "true");
 
-        rest("/drug/").description("Drug Store Api")
+        rest("/drug").description("Drug Store Api")
                 .get("/all").outType(DrugStore[].class).description("Get all drugs")
                 .responseMessage().code(200).message("operation executed successfully").endResponseMessage()
                 .to("direct:getAllDrugs")
