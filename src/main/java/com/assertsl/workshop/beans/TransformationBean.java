@@ -22,10 +22,10 @@ public class TransformationBean {
         return queryParameters;
     }
 
-    public Map updateDrugStatus(DrugDto drugDto) {
+    public Map disableDrug(@Header("ncdCode") String ncdCode ) {
     	
     	Map<String, Object> updateStatus = new HashMap<String, Object>();
-    	updateStatus.put("ProductNdc", drugDto.getProductNdc());
+    	updateStatus.put("productNdc", ncdCode);
     
     	return updateStatus;
     }
