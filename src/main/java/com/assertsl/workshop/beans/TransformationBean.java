@@ -22,10 +22,25 @@ public class TransformationBean {
         return queryParameters;
     }
 
-
+    public Map updateDrugStatus(DrugDto drugDto) {
+    	
+    	Map<String, Object> updateStatus = new HashMap<String, Object>();
+    	
+    	updateStatus.put("status", "INACTIVE");
+    
+    	return updateStatus;
+    }
+    
     public Map updateDrugParameters(DrugDto drugDto) {
+    	
         Map<String, Object> updateParameters = new HashMap<String, Object>();
         //TODO: set parameters from dto and update the entity
+        //------------------------------------------------------
+        updateParameters.put("price", drugDto.getExistences());
+        updateParameters.put("existences", drugDto.getPrice());
+        //updateParameters.put("ProductNdc", drugDto.getProductNdc());
+        //-----------------------------------------------------
+        
         return updateParameters;
     }
 
