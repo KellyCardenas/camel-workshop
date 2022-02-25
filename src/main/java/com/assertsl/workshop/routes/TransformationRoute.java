@@ -61,7 +61,7 @@ public class TransformationRoute extends RouteBuilder {
                 .log("disabling drug ${headers.ncdCode}")
                 //TODO: Update the drug with INACTIVE status
                 //------------------------------------
-                .bean("TransformationBean", "updateDrugStatus")
+                .bean("transformationBean", "updateDrugStatus")
                 //------------------------------------
                 .to("jpa:com.assertsl.workshop.domain.DrugStore")
                 .end();

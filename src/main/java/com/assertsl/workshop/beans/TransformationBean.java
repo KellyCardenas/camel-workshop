@@ -25,8 +25,7 @@ public class TransformationBean {
     public Map updateDrugStatus(DrugDto drugDto) {
     	
     	Map<String, Object> updateStatus = new HashMap<String, Object>();
-    	
-    	updateStatus.put("status", "INACTIVE");
+    	updateStatus.put("ProductNdc", drugDto.getProductNdc());
     
     	return updateStatus;
     }
@@ -38,7 +37,7 @@ public class TransformationBean {
         //------------------------------------------------------
         updateParameters.put("price", drugDto.getExistences());
         updateParameters.put("existences", drugDto.getPrice());
-        //updateParameters.put("ProductNdc", drugDto.getProductNdc());
+        updateParameters.put("ProductNdc", drugDto.getProductNdc());
         //-----------------------------------------------------
         
         return updateParameters;
