@@ -63,7 +63,7 @@ public class TransformationRoute extends RouteBuilder {
                 //------------------------------------
                 .setHeader("CamelJpaParameters", method("transformationBean","disableDrug"))
                 //------------------------------------
-                .to("jpa:com.assertsl.workshop.domain.DrugStore?useExecuteUpdate=true&query=" + databaseProperties.getGetDrug())
+                .to("jpa:com.assertsl.workshop.domain.DrugStore?query=" + databaseProperties.getGetDrug())
                 .end();
 
 
