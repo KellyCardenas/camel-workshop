@@ -24,7 +24,7 @@ public class TransformationBean {
 
     public Map disableDrug(@Header("ncdCode") String ncdCode ) {
     	
-    	Map<String, Object> updateStatus = new HashMap<String, Object>();
+    	Map<String, String> updateStatus = new HashMap<String, String>();
     	updateStatus.put("productNdc", ncdCode);
     
     	return updateStatus;
