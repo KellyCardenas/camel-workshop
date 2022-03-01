@@ -23,13 +23,13 @@ public class TransformationBean {
         return queryParameters;
     }
 
-    public Map disableDrug(@Header("ncdCode") String ncdCode ) {
-    	
-    	Map<String, String> updateStatus = new HashMap<String, String>();
-    	updateStatus.put("productNdc", ncdCode);
-    
-    	return updateStatus;
-    }
+//    public Map disableDrug(@Header("ncdCode") String ncdCode ) {
+//    	
+//    	Map<String, String> updateStatus = new HashMap<String, String>();
+//    	updateStatus.put("productNdc", ncdCode);
+//    
+//    	return updateStatus;
+//    }
     
     public Map updateDrugParameters(DrugDto drugDto) {
     	
@@ -52,7 +52,7 @@ public class TransformationBean {
         exchange.getIn().setHeader(Exchange.FILE_NAME, dh.getName());
     }
 
-    public void disableDrugStatus(DrugStore drugStore){
+    public void disableDrug(DrugStore drugStore){
         drugStore.setStatus("INACTIVE");
     }
 }
